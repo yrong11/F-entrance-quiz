@@ -35,6 +35,7 @@ class PeopleList extends Component {
     if(e.keyCode === 13 && e.shiftKey === false) {
       e.preventDefault();
       await addPeople(e.target.value)
+      await this.getPeoples()
     }
     
   }
