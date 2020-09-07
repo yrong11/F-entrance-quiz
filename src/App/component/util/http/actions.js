@@ -9,3 +9,7 @@ export function addPeople(name) {
     'Content-Type': 'application/json;charset=UTF-8'
   }})
 }
+
+export function getGroupList() {
+  return httpClient.get('/group')
+}

@@ -1,0 +1,13 @@
+@import '../../../style/variables';
+
+.group-list {
+  text-align: left;
+  padding: 20px;
+  h2 {
+    font-weight: bold;
+  }
+  .group-header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
