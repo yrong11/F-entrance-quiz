@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { message } from 'antd';
-import { getGroupList } from '../util/http/actions'
+import { getGroupList, modifyGroupName } from '../util/http/actions'
 import PeopleGroup from './PeopleGroup'
 import './group.scss'
 
@@ -15,17 +15,20 @@ class GroupList extends Component {
   componentDidMount() {
   }
 
+  modifyName = async() => {
+  }
+
   getGroupPeoples = async () => {
     try {
       const response = await getGroupList()
       if (response.status !== 200) {
-        message.error("获取学员列表失败！")
+        message.error("获取学员分组列表失败！")
       }
       this.setState({
         groupList: response.data
       })
     } catch (e) {
-      message.error('error')
+      message.error('获取学员分组列表失败')
     }
   }
 
