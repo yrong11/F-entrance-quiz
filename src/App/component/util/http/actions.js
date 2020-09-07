@@ -4,6 +4,6 @@ export function getPeopleList() {
   return httpClient.get('/peoples')
 }
 
-export function getPeopleGroup() {
-
+export function addPeople(name) {
+  return httpClient.post('/people', name)
 }

@@ -3,12 +3,16 @@ import './people.scss'
 
 class People extends Component {
   render() {
-    const {item} = this.props
+    const { item } = this.props
     return (
-      <div className="people-info">
-         {item.id}.
-         {item.name} 
-      </div>
+      item.id !== -1 ?
+        <div className="people-info">
+          {`${item.id}.${item.name}`}
+        </div> : 
+        <div className='add-people'>
+          <input onKeyUp={this.props.addPeople} className="add-people-input" 
+          type='text' placeholder="+添加学员" />
+        </div>
     );
   }
 }

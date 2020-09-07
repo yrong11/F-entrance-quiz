@@ -12,3 +12,17 @@
     font-weight: bold;
   }
 }
+
+.add-people {
+ padding: 0px;
+ .add-people-input {
+   width: 100%;
+   border-color: $gray;
+   height: 100%;
+   padding: 5px;
+ }
+ input::-webkit-input-placeholder{
+  text-align: center;
+}
+}
+

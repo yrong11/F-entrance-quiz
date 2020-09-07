@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {message, List } from 'antd';
 import People from './People'
-import {getPeopleList} from '../util/http/actions'
+import {getPeopleList, addPeople} from '../util/http/actions'
 
 class PeopleList extends Component {
   constructor(props) {
@@ -13,7 +13,6 @@ class PeopleList extends Component {
   
   componentDidMount(){
     this.getPeoples()
-    console.log(this.state.peoples)
   }
 
   getPeoples = async () =>{
@@ -22,12 +21,22 @@ class PeopleList extends Component {
       if(response.status !== 200) {
         message.error("获取学员列表失败！")
       }
+      const peopleData = response.data
+      peopleData.push({'id': -1})
       this.setState({
-        peoples: response.data
+        peoples: peopleData
       })
     }catch (e) {
       message.error('error')
     }
+  }
+
+  addPeople = async(e) => {
+    if(e.keyCode === 13 && e.shiftKey === false) {
+      e.preventDefault();
+      await addPeople(e.target.value)
+    }
+    
   }
 
   render() {
@@ -42,6 +51,8 @@ class PeopleList extends Component {
               <People
                 key={item.id}
                 item={item}
+                // eslint-disable-next-line react/jsx-no-bind
+                addPeople={this.addPeople.bind(this)}
                />
             </List.Item>
           )}
