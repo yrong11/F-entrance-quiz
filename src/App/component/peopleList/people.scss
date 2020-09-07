@@ -1,0 +1,14 @@
+@import '../../../style/variables';
+
+.people-info {
+  background-color: $light-gray;
+  text-align: center;
+  padding: 5px;
+}
+
+.people-list {
+  padding: 20px;
+  h2 {
+    font-weight: bold;
+  }
+}

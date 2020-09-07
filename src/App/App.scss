@@ -1,2 +1,6 @@
+@import '../style/variables';
+
 .App {
+  background-color: $bg-gray;
+  font-size: $base-font-size;
 }
