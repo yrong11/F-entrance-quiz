@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 class PeopleGroup extends Component {
   render() {
     const {item, groupName} = this.props
+    console.log(item)
+    console.log(groupName)
     return (
     <div>
       <input onKeyUp={this.props.editGroupName} className="add-people-input" 

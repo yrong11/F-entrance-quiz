@@ -46,7 +46,7 @@ class GroupList extends Component {
         </div>
         
         {Object.keys(data).map((key) =>
-        <PeopleGroup key={key} gropName={key} item={data[key]} />
+        <PeopleGroup key={key} groupName={key} item={data[key]} />
         )}
       </div>
     );
