@@ -6,8 +6,8 @@ class PeopleGroup extends Component {
     console.log(item)
     console.log(groupName)
     return (
-    <div>
-      <input onKeyUp={this.props.editGroupName} className="add-people-input" 
+    <div className='group-info'>
+      <input onKeyUp={this.props.editGroupName} className="group-name" 
           type='text' value={groupName} />
       {item.forEach((itm) => {return(<div>{`${itm.id}.${itm.name}`}</div>)} )}
     </div>

@@ -1,6 +1,7 @@
 @import '../../../style/variables';
 
 .group-list {
+  margin: 10px;
   text-align: left;
   padding: 20px;
   h2 {
@@ -10,4 +11,14 @@
     display: flex;
     justify-content: space-between;
   }
+  .group-info{
+    margin: 15px 0px;
+  }
+}
+
+.group-name{
+  width: 100%;
+  text-align: center;
+  background-color: $gray;
+  border: none;
 }
